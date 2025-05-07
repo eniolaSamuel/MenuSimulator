@@ -27,7 +27,7 @@ export function USSDInput({ onSubmit, ussdCode, setUssdCode }: USSDInputProps) {
                     placeholder="Enter USSD code (e.g., *465#)"
                     className="w-full p-2 border border-gray-300 rounded text-center text-lg"
                 />
-                <button type="submit" className="w-full p-2 rounded text-#1d1108" style={{ backgroundColor: "#ffffff" }}>
+                <button type="submit" className="w-full p-2 rounded text-white" style={{ backgroundColor: "#1d1108" }}>
                     Submit
                 </button>
             </form>
