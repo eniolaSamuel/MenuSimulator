@@ -107,12 +107,22 @@ export function MenuContainer({ onReset }: MenuContainerProps) {
 
     const handleSubmenu2Selection = (optionId: number) => {
         setSubmenu2Selection(optionId)
+
+        const newUssdString = `${ussdSelectionString}${optionId}`
+        setUssdSelectionString(newUssdString)
+        console.log(`Selection: ${newUssdString}`)
+
         setCurrentMenu("color")
     }
 
 
     const handleColorSubmit = (e: React.FormEvent) => {
         e.preventDefault()
+
+        const newUssdString = `${ussdSelectionString}*${colorInput}`
+        setUssdSelectionString(newUssdString)
+        console.log(`Selection: ${newUssdString}`)
+
         setShowSummary(true)
     }
 
