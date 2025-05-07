@@ -73,9 +73,15 @@ export function MenuContainer({ onReset }: MenuContainerProps) {
     const [colorInput, setColorInput] = useState("")
     const [summary, setShowSummary] = useState(false)
 
+    const [ussdSelectionString, setUssdSelectionString] = useState("*465#")
+
 
     const handleMainSelection = (optionId: number) => {
         setMainSelection(optionId)
+
+        const newUssdString = `${ussdSelectionString}${optionId}`
+        setUssdSelectionString(newUssdString)
+        console.log(`Selection: ${newUssdString}`)
 
 
         const selectedOption = menuData.main.options.find((option) => option.id === optionId)
@@ -90,6 +96,11 @@ export function MenuContainer({ onReset }: MenuContainerProps) {
 
     const handleSubmenu1Selection = (optionId: number) => {
         setSubmenu1Selection(optionId)
+
+        const newUssdString = `${ussdSelectionString}*${optionId}`
+        setUssdSelectionString(newUssdString)
+        console.log(`Selection: ${newUssdString}`)
+
         setCurrentMenu("submenu2")
     }
 
